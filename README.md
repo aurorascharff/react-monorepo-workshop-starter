@@ -18,16 +18,16 @@ npm run dev
 
 `npm run dev` starts all apps at once via Turborepo.
 
-Workshop tasks are listed in [EXERCISES.md](EXERCISES.md).
-
-Finished reference repo:
-[react-monorepo-workshop](https://github.com/aurorascharff/react-monorepo-workshop)
-
 | App         | URL                   |
 | ----------- | --------------------- |
 | Arena (SPA) | http://localhost:5173 |
 | API + docs  | http://localhost:3001 |
 | medix.com   | http://localhost:3000 |
+
+Workshop tasks are listed in [EXERCISES.md](EXERCISES.md).
+
+Finished reference repo:
+[react-monorepo-workshop](https://github.com/aurorascharff/react-monorepo-workshop)
 
 ## Monorepo structure
 
