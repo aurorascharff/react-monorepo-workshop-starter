@@ -61,6 +61,16 @@ npm run test          # Vitest across all apps
 npm run db:seed       # Reset database to seed data
 ```
 
+## AI
+
+Includes nested `AGENTS.md` files that scope context to each part of the monorepo. Read the nearest `AGENTS.md` before editing.
+
+GitHub Copilot is configured via `.github/copilot-instructions.md`, and the [`vercel-react-best-practices`](https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices) skill is available as `/react-best-practices` in Copilot Chat.
+
+## CI
+
+GitHub Actions runs `lint`, `typecheck`, `test`, and `build` on every push and pull request to `main`.
+
 ## Reading & references
 
 If you're new to React, or coming from a strongly typed UI background like WPF/MVVM, these are useful reads for the workshop.
