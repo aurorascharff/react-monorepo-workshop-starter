@@ -20,7 +20,10 @@ const patients = [
 
 describe('App smoke test', () => {
   beforeEach(() => {
-    vi.stubGlobal('fetch', vi.fn(async () => Response.json(patients)))
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => Response.json(patients)),
+    )
   })
 
   afterEach(() => {
@@ -33,7 +36,7 @@ describe('App smoke test', () => {
     expect(
       await screen.findByRole('heading', { name: /good morning/i }),
     ).toBeVisible()
-    expect(screen.getByText(/you have 2 patients/i)).toBeInTheDocument()
+    expect(await screen.findByText(/you have 2 patients/i)).toBeInTheDocument()
     expect(screen.getByText('Mary Smith')).toBeInTheDocument()
   })
 })

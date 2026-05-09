@@ -20,11 +20,14 @@ npm run dev
 
 Workshop tasks are listed in [EXERCISES.md](EXERCISES.md).
 
-| App | URL |
-| --- | --- |
+Finished reference repo:
+[react-monorepo-workshop](https://github.com/aurorascharff/react-monorepo-workshop)
+
+| App         | URL                   |
+| ----------- | --------------------- |
 | Arena (SPA) | http://localhost:5173 |
-| API + docs | http://localhost:3001 |
-| medix.com | http://localhost:3000 |
+| API + docs  | http://localhost:3001 |
+| medix.com   | http://localhost:3000 |
 
 ## Monorepo structure
 
@@ -39,16 +42,16 @@ packages/
 
 ## Tech stack
 
-| Layer | Tool |
-| --- | --- |
-| UI framework | [React 19](https://react.dev) + [React Compiler](https://react.dev/learn/react-compiler) |
-| Routing | [React Router v7](https://reactrouter.com) (SPA mode) |
-| Data fetching | [TanStack Query v5](https://tanstack.com/query) |
-| Forms | [React Hook Form](https://react-hook-form.com) + [Zod v4](https://zod.dev) |
-| Styling | [Tailwind CSS v4](https://tailwindcss.com) + shadcn-style component library |
-| API | [Hono](https://hono.dev) + [Drizzle ORM](https://orm.drizzle.team) + SQLite (pre-written) |
-| Monorepo | [Turborepo](https://turbo.build) + npm workspaces |
-| Testing | [Vitest](https://vitest.dev), [React Testing Library](https://testing-library.com), and [Playwright](https://playwright.dev) |
+| Layer         | Tool                                                                                                                         |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| UI framework  | [React 19](https://react.dev) + [React Compiler](https://react.dev/learn/react-compiler)                                     |
+| Routing       | [React Router v7](https://reactrouter.com) (SPA mode)                                                                        |
+| Data fetching | [TanStack Query v5](https://tanstack.com/query)                                                                              |
+| Forms         | [React Hook Form](https://react-hook-form.com) + [Zod v4](https://zod.dev)                                                   |
+| Styling       | [Tailwind CSS v4](https://tailwindcss.com) + shadcn-style component library                                                  |
+| API           | [Hono](https://hono.dev) + [Drizzle ORM](https://orm.drizzle.team) + SQLite (pre-written)                                    |
+| Monorepo      | [Turborepo](https://turbo.build) + npm workspaces                                                                            |
+| Testing       | [Vitest](https://vitest.dev), [React Testing Library](https://testing-library.com), and [Playwright](https://playwright.dev) |
 
 ## Commands
 
