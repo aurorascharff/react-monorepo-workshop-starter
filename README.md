@@ -26,7 +26,7 @@ npm run dev
 | API + docs  | http://localhost:3001 |
 | medix.com   | http://localhost:3000 |
 
-Workshop tasks are listed in [EXERCISES.md](EXERCISES.md).
+Workshop tasks are listed in [exercises/](exercises/).
 
 Finished reference repo:
 [react-monorepo-workshop](https://github.com/aurorascharff/react-monorepo-workshop)
