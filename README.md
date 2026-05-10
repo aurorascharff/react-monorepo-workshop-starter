@@ -82,4 +82,4 @@ GitHub Copilot is configured via `.github/copilot-instructions.md`, and the [`ve
 
 ## CI
 
-GitHub Actions runs `lint`, `typecheck`, `test`, and `build` on every push and pull request to `main`.
+GitHub Actions runs `lint`, `typecheck`, `test`, `build`, and `e2e` on every push and pull request to `main`.
