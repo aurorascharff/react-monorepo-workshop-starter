@@ -74,7 +74,10 @@ npm run db:seed       # Reset database to seed data
 
 The starter includes the test setup and a few small smoke/mock tests so you can run the tools before adding more coverage.
 
-Unit and component tests live in nearby `tests/` folders. Browser tests live in `apps/e2e/tests`.
+```bash
+npm run test  # Unit and component tests
+npm run e2e   # Browser tests for Arena + API
+```
 
 ## AI
 
