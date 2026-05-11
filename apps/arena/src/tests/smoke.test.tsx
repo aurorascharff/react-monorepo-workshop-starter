@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { MemoryRouter } from 'react-router'
 import type { ReactElement } from 'react'
 
@@ -37,7 +38,15 @@ describe('App smoke test', () => {
   })
 
   it('renders the dashboard with mocked patient data', async () => {
-    render(await getAppElement())
+    const queryClient = new QueryClient({
+      defaultOptions: { queries: { retry: false } },
+    })
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        {await getAppElement()}
+      </QueryClientProvider>,
+    )
 
     expect(
       await screen.findByRole('heading', { name: /good morning/i }),
