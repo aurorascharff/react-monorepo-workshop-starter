@@ -14,7 +14,7 @@ The app works, but too many responsibilities live in the same places. It is hard
 
 4. Replace the native selects in the patient filter and journal status control in [apps/arena/src/PatientPage.tsx](../apps/arena/src/PatientPage.tsx) with the shared Base UI [`Select`](../packages/ui/src/base/select.tsx) primitive from `@medix/ui`. Keep the status visible without adding a separate badge.
 
-5. Find the duplicated Medix logo and wordmark in the Arena shell in [apps/arena/src/App.tsx](../apps/arena/src/App.tsx) and the medix.com layout in [apps/medix.com/app/layout.tsx](../apps/medix.com/app/layout.tsx). Turn that UI into a shared `BrandMark` domain component in [packages/ui](../packages/ui/src), then use it from both apps. Arena should pass the `Arena` product context, while medix.com should render the main Medix brand.
+5. Find the duplicated Medix logo and wordmark in the Arena shell you moved from [apps/arena/src/App.tsx](../apps/arena/src/App.tsx) and the medix.com layout in [apps/medix.com/app/layout.tsx](../apps/medix.com/app/layout.tsx). Turn that UI into a shared `BrandMark` domain component in [packages/ui](../packages/ui/src), then use it from both apps. Arena should pass the `Arena` product context, while medix.com should render the main Medix brand.
 
 ## Bonus
 
