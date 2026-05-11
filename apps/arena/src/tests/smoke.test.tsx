@@ -1,5 +1,11 @@
 import { render, screen } from '@testing-library/react'
-import { App } from '../App'
+import { MemoryRouter } from 'react-router'
+import type { ReactElement } from 'react'
+
+const appModules = import.meta.glob<{
+  App?: () => ReactElement
+  AppRoutes?: () => ReactElement
+}>('../{App,router}.tsx')
 
 const patients = [
   {
@@ -31,7 +37,7 @@ describe('App smoke test', () => {
   })
 
   it('renders the dashboard with mocked patient data', async () => {
-    render(<App />)
+    render(await getAppElement())
 
     expect(
       await screen.findByRole('heading', { name: /good morning/i }),
@@ -40,3 +46,24 @@ describe('App smoke test', () => {
     expect(screen.getByText('Mary Smith')).toBeInTheDocument()
   })
 })
+
+async function getAppElement(): Promise<ReactElement> {
+  const loadApp = appModules['../App.tsx']
+  if (loadApp) {
+    const { App } = await loadApp()
+    if (!App) throw new Error('App module did not export App')
+    return <App />
+  }
+
+  const loadRouter = appModules['../router.tsx']
+  if (!loadRouter) throw new Error('No app entry module found')
+
+  const { AppRoutes } = await loadRouter()
+  if (!AppRoutes) throw new Error('Router module did not export AppRoutes')
+
+  return (
+    <MemoryRouter>
+      <AppRoutes />
+    </MemoryRouter>
+  )
+}
