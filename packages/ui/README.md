@@ -1,6 +1,6 @@
 # UI
 
-`@medix/ui` is the shared UI package. It contains generic Base UI primitives and small Domain UI wrappers used by both Arena and medix.com.
+`@medix/ui` is the shared UI package. It contains generic Base UI primitives shared by the apps.
 
 ## Run
 
@@ -14,7 +14,6 @@ npm test --workspace=packages/ui
 ```text
 src/
   base/          - generic primitives such as Button, Card, Input, Select
-  StatusBadge.tsx
   index.ts       - public package exports
   styles.css     - package styles
 ```
@@ -23,7 +22,7 @@ src/
 
 Base UI should stay generic. It should not know about patients, journals, or product workflows.
 
-Domain UI can know shared product concepts, such as journal status.
+Shared domain components should be added here only when more than one app needs the same concept.
 
 App UI belongs in the app when it is tied to one screen or workflow.
 
