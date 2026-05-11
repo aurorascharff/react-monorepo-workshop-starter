@@ -18,6 +18,8 @@ npm run db:seed
 npm run dev
 ```
 
+Open the `.code-workspace` file in VS Code so the repo settings and recommended extensions are applied.
+
 `npm run dev` starts all apps at once via Turborepo.
 
 | App         | URL                   |
