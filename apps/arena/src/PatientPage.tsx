@@ -48,13 +48,18 @@ export function PatientPage({
     setSelectedPatient(patients.find((p) => p.id === selectedId) ?? null)
   }, [patients, selectedId])
 
-  const filteredPatients = patients.filter((p) => {
-    const matchesSearch =
-      p.name.toLowerCase().includes(search.toLowerCase()) ||
-      p.diagnosis.toLowerCase().includes(search.toLowerCase())
-    const matchesGender = genderFilter === 'all' || p.gender === genderFilter
-    return matchesSearch && matchesGender
-  })
+  const [filteredPatients, setFilteredPatients] = useState(patients)
+  useEffect(() => {
+    setFilteredPatients(
+      patients.filter((p) => {
+        const matchesSearch =
+          p.name.toLowerCase().includes(search.toLowerCase()) ||
+          p.diagnosis.toLowerCase().includes(search.toLowerCase())
+        const matchesGender = genderFilter === 'all' || p.gender === genderFilter
+        return matchesSearch && matchesGender
+      }),
+    )
+  }, [patients, search, genderFilter])
 
   if (isLoadingPatients) return <Spinner />
 
