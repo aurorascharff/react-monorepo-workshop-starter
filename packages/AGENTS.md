@@ -16,5 +16,5 @@
 
 - `ui/` (`@medix/ui`) — shared design system
   - `src/base/` — generic shadcn primitives (`Badge`, `Button`, `Card`, `Input`, `Label`, `Select`, `Textarea`)
-  - `src/types.ts`, etc. — shared UI-facing types
+  - `src/<DomainComponent>.tsx` — shared domain UI used by more than one app (added during the workshop)
   - Two-layer pattern: apps consume domain wrappers; wrappers consume primitives. One mapping change updates every app.
