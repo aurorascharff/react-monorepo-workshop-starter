@@ -15,6 +15,8 @@ git clone <participant-repo-url>
 cd <participant-repo-name>
 ```
 
+If you want to restart from scratch, the starter is available at [github.com/aurorascharff/react-monorepo-workshop-starter](https://github.com/aurorascharff/react-monorepo-workshop-starter).
+
 Open the `.code-workspace` file in VS Code so the repo settings and recommended extensions are applied.
 
 ```bash
@@ -32,9 +34,6 @@ npm run dev
 | medix.com   | http://localhost:3000 |
 
 Workshop tasks are listed in [exercises/](exercises/).
-
-Finished reference repo:
-[react-monorepo-workshop](https://github.com/aurorascharff/react-monorepo-workshop)
 
 ## Monorepo structure
 
@@ -95,3 +94,8 @@ GitHub Copilot is configured via `.github/copilot-instructions.md`, and the [`ve
 ## CI
 
 GitHub Actions runs `lint`, `typecheck`, `test`, `build`, and `e2e` on every push and pull request to `main`.
+
+## Reference
+
+Finished reference repo:
+[react-monorepo-workshop](https://github.com/aurorascharff/react-monorepo-workshop)
