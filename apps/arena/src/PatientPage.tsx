@@ -55,7 +55,8 @@ export function PatientPage({
         const matchesSearch =
           p.name.toLowerCase().includes(search.toLowerCase()) ||
           p.diagnosis.toLowerCase().includes(search.toLowerCase())
-        const matchesGender = genderFilter === 'all' || p.gender === genderFilter
+        const matchesGender =
+          genderFilter === 'all' || p.gender === genderFilter
         return matchesSearch && matchesGender
       }),
     )
