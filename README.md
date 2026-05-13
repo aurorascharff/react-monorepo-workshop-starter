@@ -33,7 +33,7 @@ npm run dev
 | API + docs  | http://localhost:3001 |
 | medix.com   | http://localhost:3000 |
 
-Workshop tasks are listed in [exercises/](exercises/).
+Workshop tasks are in [exercises/](exercises/).
 
 ## Monorepo structure
 
@@ -99,3 +99,5 @@ GitHub Actions runs `lint`, `typecheck`, `test`, `build`, and `e2e` on every pus
 
 Finished reference repo:
 [react-monorepo-workshop](https://github.com/aurorascharff/react-monorepo-workshop)
+
+The final reference repo includes the completed app, tests, and solution walkthroughs for each exercise.

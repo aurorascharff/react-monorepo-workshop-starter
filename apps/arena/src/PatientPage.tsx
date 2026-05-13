@@ -33,9 +33,8 @@ export function PatientPage({
   const [isLoadingPatients, setIsLoadingPatients] = useState(true)
 
   const [search, setSearch] = useState('')
-  const [genderFilter, setGenderFilter] = useState<'all' | 'male' | 'female'>(
-    'all',
-  )
+  const [showMalePatients, setShowMalePatients] = useState(true)
+  const [showFemalePatients, setShowFemalePatients] = useState(true)
 
   useEffect(() => {
     fetchPatients()
@@ -56,11 +55,12 @@ export function PatientPage({
           p.name.toLowerCase().includes(search.toLowerCase()) ||
           p.diagnosis.toLowerCase().includes(search.toLowerCase())
         const matchesGender =
-          genderFilter === 'all' || p.gender === genderFilter
+          (p.gender === 'male' && showMalePatients) ||
+          (p.gender === 'female' && showFemalePatients)
         return matchesSearch && matchesGender
       }),
     )
-  }, [patients, search, genderFilter])
+  }, [patients, search, showMalePatients, showFemalePatients])
 
   if (isLoadingPatients) return <Spinner />
 
@@ -93,10 +93,12 @@ export function PatientPage({
           <select
             id="gender-filter"
             className="h-9 rounded-md border bg-background px-3 text-sm"
-            value={genderFilter}
-            onChange={(event) =>
-              setGenderFilter(event.target.value as 'all' | 'male' | 'female')
-            }
+            value={getGenderFilterValue(showMalePatients, showFemalePatients)}
+            onChange={(event) => {
+              const value = event.target.value
+              setShowMalePatients(value === 'all' || value === 'male')
+              setShowFemalePatients(value === 'all' || value === 'female')
+            }}
           >
             <option value="all">All</option>
             <option value="male">Male</option>
@@ -143,6 +145,13 @@ export function PatientPage({
       )}
     </div>
   )
+}
+
+function getGenderFilterValue(showMale: boolean, showFemale: boolean) {
+  if (showMale && showFemale) return 'all'
+  if (showMale) return 'male'
+  if (showFemale) return 'female'
+  return 'all'
 }
 
 function calculateAge(dateOfBirth: string): number {
