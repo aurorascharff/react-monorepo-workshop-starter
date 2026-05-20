@@ -20,12 +20,12 @@ If you want to restart from scratch, the starter is available at [github.com/aur
 Open the `.code-workspace` file in VS Code so the repo settings and recommended extensions are applied.
 
 ```bash
-npm install
-npm run db:seed
-npm run dev
+pnpm install
+pnpm db:seed
+pnpm dev
 ```
 
-`npm run dev` starts all apps at once via Turborepo.
+`pnpm dev` starts all apps at once via Turborepo.
 
 | App         | URL                   |
 | ----------- | --------------------- |
@@ -56,22 +56,22 @@ packages/
 | Forms         | [React Hook Form](https://react-hook-form.com) + [Zod v4](https://zod.dev)                                                   |
 | Styling       | [Tailwind CSS v4](https://tailwindcss.com) + shadcn-style component library                                                  |
 | API           | [Hono](https://hono.dev) + [Drizzle ORM](https://orm.drizzle.team) + SQLite (pre-written)                                    |
-| Monorepo      | [Turborepo](https://turbo.build) + npm workspaces                                                                            |
+| Monorepo      | [Turborepo](https://turbo.build) + pnpm workspaces                                                                            |
 | Testing       | [Vitest](https://vitest.dev), [React Testing Library](https://testing-library.com), and [Playwright](https://playwright.dev) |
 
 ## Commands
 
 ```bash
-npm run dev           # Start all apps
-npm run build         # Build all apps
-npm run lint          # ESLint across all apps
-npm run typecheck     # TypeScript check across all apps
-npm run format        # Prettier write
-npm run format:check  # Prettier check
-npm run test          # Vitest across apps and packages
-npm run e2e           # Playwright smoke tests
-npm run test:all      # Vitest + Playwright
-npm run db:seed       # Reset database to seed data
+pnpm dev           # Start all apps
+pnpm build         # Build all apps
+pnpm lint          # ESLint across all apps
+pnpm typecheck     # TypeScript check across all apps
+pnpm format        # Prettier write
+pnpm format:check  # Prettier check
+pnpm test          # Vitest across apps and packages
+pnpm e2e           # Playwright smoke tests
+pnpm test:all      # Vitest + Playwright
+pnpm db:seed       # Reset database to seed data
 ```
 
 ## Testing
@@ -79,11 +79,11 @@ npm run db:seed       # Reset database to seed data
 The starter includes the test setup and a few small smoke/mock tests so you can run the tools before adding more coverage.
 
 ```bash
-npm run test  # Unit and component tests
-npm run e2e   # Browser tests for Arena + API
+pnpm test  # Unit and component tests
+pnpm e2e   # Browser tests for Arena + API
 ```
 
-The first `npm run e2e` downloads the Chromium binary Playwright needs (~150 MB). Subsequent runs reuse it.
+The first `pnpm e2e` downloads the Chromium binary Playwright needs (~150 MB). Subsequent runs reuse it.
 
 ## AI
 
