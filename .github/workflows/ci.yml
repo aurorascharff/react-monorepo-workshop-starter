@@ -20,28 +20,32 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Install
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Install Playwright
-        run: npm run e2e:install --workspace=apps/e2e
+        run: pnpm --filter ./apps/e2e e2e:install
 
       - name: Seed database
-        run: npm run db:seed
+        run: pnpm db:seed
 
       - name: Lint
-        run: npm run lint
+        run: pnpm lint
 
       - name: Typecheck
-        run: npm run typecheck
+        run: pnpm typecheck
 
       - name: Test
-        run: npm run test
+        run: pnpm test
 
       - name: Build
-        run: npm run build
+        run: pnpm build
 
       - name: End-to-end tests
-        run: npm run e2e
+        run: pnpm e2e
